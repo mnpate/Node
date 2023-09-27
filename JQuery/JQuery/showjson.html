@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>getJson</title>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("#b1").click(function() {
+                    var url="data/product.json"
+
+                    $("#data_table tbody").html("");
+                    $.getJSON(url,(data)=> {
+                        var content="";
+
+                        for(var i=0;i<data.length;i++)
+                        {
+                            content+="<tr>";
+                            content+="<td>"+data[i].name+"</td>";
+                            content+="<td>"+data[i].price+"</td>";
+                            content+="<td>"+data[i].quantity+"</td>"; 
+                            content+="</tr>"           
+                        }
+                        $("#data_table tbody").html(content);
+                    });
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+        <table class="mGrid" id="data_table" border="1">
+            <thead>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Qty</th>
+            </thead>
+            <tbody></tbody>
+
+        </table>
+        
+        <input type="button" id="b1" name="b1" value="Click"/>
+
+       
+        
+    </body>
+</html>

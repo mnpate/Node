@@ -1,0 +1,27 @@
+
+<html>
+   <head>
+      <title>The jQuery Example</title>
+      <script type = "text/javascript" 
+         src = "https://www.tutorialspoint.com/jquery/jquery-3.6.0.js">
+      </script>
+		
+      <script type = "text/javascript" language = "javascript">
+         $(document).ready(function() {
+            $("#driver").click(function(event){
+               $('#stage').load('includes/content.html #STAGE');
+            });
+         });
+      </script>
+   </head>
+	
+   <body>
+      <p>Click on the button to load result.html file:</p>
+		
+      <div id = "stage" style = "background-color:cc0;">
+         STAGE
+      </div>
+		
+      <input type = "button" id = "driver" value = "Load Data" />
+   </body>
+</html>
